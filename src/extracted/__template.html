@@ -803,22 +803,65 @@ button { font: inherit; cursor: pointer; }
   transition: color 0.15s ease;
 }
 .nav-links a:hover { color: var(--qlar-600); }
+.nav-actions { display: flex; gap: 10px; align-items: center; }
+.nav-mobile-item { display: none; }
+.nav-burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--ink-200);
+  background: transparent;
+  color: var(--ink-700);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.nav-burger:hover { background: var(--ink-50); }
+.nav-mobile-menu {
+  border-top: 1px solid var(--ink-100);
+  background: rgba(251, 251, 254, 0.98);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 16px 0 20px;
+}
+.nav-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.nav-mobile-link {
+  display: block;
+  padding: 11px 4px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-700);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: color 0.15s ease;
+}
+.nav-mobile-link:hover { color: var(--qlar-600); }
+.nav-mobile-divider {
+  height: 1px;
+  background: var(--ink-100);
+  margin: 14px 0;
+}
+.nav-mobile-ctas {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 @media (max-width: 880px) {
   .nav-links { display: none; }
-}
-@media (max-width: 720px) {
+  .nav-desktop-item { display: none; }
+  .nav-mobile-item { display: flex; }
+  .nav-burger { display: flex; }
   .nav-inner { height: 60px; }
-  .nav-actions { gap: 6px; }
-  .nav-signin { display: none; }
-  .nav-chat-label { display: none; }
-  .nav-chat { padding: 8px 12px; }
-  .nav-chat svg { width: 16px; height: 16px; }
+  .nav-actions { gap: 8px; }
 }
-@media (max-width: 480px) {
-  .nav-actions .btn-primary.btn-sm { display: none; }
-}
-@media (max-width: 360px) {
-  .nav-actions { gap: 4px; }
+@media (max-width: 400px) {
+  .nav-mobile-ctas { flex-direction: column; }
+  .nav-mobile-ctas .btn { justify-content: center; }
 }
 
 /* ============ Hero ============ */

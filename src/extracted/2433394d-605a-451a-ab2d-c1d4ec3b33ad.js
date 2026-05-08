@@ -26,6 +26,7 @@ const AppInner = () => {
   const { t, lang } = useLang();
   const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
   const [scrolled, setScrolled] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -38,8 +39,16 @@ const AppInner = () => {
     document.documentElement.dataset.density = tweaks.density;
   }, [tweaks.accent, tweaks.density]);
 
+  React.useEffect(() => {
+    if (!mobileOpen) return;
+    const handler = (e) => { if (!e.target.closest(".nav")) setMobileOpen(false); };
+    document.addEventListener("click", handler);
+    return () => document.removeEventListener("click", handler);
+  }, [mobileOpen]);
+
   const hookFn = HOOKS[tweaks.heroHook] || HOOKS.promise;
   const hook = hookFn({ ...t, lang });
+  const closeMenu = () => setMobileOpen(false);
 
   return (
     <>
@@ -53,15 +62,40 @@ const AppInner = () => {
             <a href="#pricing">{t.nav.pricing}</a>
             <a href="#faq">{t.nav.faq}</a>
           </div>
-          <div className="nav-actions" style={{ display: "flex", gap: 10, alignItems: "center" }}>
+          <div className="nav-actions">
             <LangToggle />
-            <a href="#" className="btn btn-ghost btn-sm nav-signin">{t.nav.signin}</a>
-            <a href="https://wa.me/6280989999" target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-sm nav-chat" aria-label={t.nav.chat}>
-              <Icon.whatsapp /> <span className="nav-chat-label">{t.nav.chat}</span>
+            {/* Desktop */}
+            <a href="#" className="btn btn-ghost btn-sm nav-desktop-item">{t.nav.signin}</a>
+            <a href="https://wa.me/6280989999" target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-sm nav-desktop-item">
+              <Icon.whatsapp /> {t.nav.chat}
             </a>
-            <a href="https://app.qlar.ai/a31cf423" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">{t.nav.cta} <Icon.arrow /></a>
+            <a href="https://app.qlar.ai/a31cf423" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm nav-desktop-item">{t.nav.cta} <Icon.arrow /></a>
+            {/* Mobile */}
+            <a href="#" className="btn btn-ghost btn-sm nav-mobile-item">{t.nav.signin}</a>
+            <button className="nav-burger nav-mobile-item" onClick={() => setMobileOpen(o => !o)} aria-label="Menu">
+              {mobileOpen ? <Icon.x /> : <Icon.menu />}
+            </button>
           </div>
         </div>
+        {mobileOpen && (
+          <div className="nav-mobile-menu">
+            <div className="container">
+              <div className="nav-mobile-links">
+                {[["#outcomes", t.nav.outcomes], ["#how", t.nav.how], ["#demo", t.nav.demo], ["#pricing", t.nav.pricing], ["#faq", t.nav.faq]].map(([href, label]) => (
+                  <a key={href} href={href} className="nav-mobile-link" onClick={closeMenu}>{label}</a>
+                ))}
+              </div>
+              <div className="nav-mobile-divider" />
+              <div className="nav-mobile-ctas">
+                <a href="#" className="btn btn-ghost btn-sm" onClick={closeMenu}>{t.nav.signin}</a>
+                <a href="https://wa.me/6280989999" target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-sm" onClick={closeMenu}>
+                  <Icon.whatsapp /> {t.nav.chat}
+                </a>
+                <a href="https://app.qlar.ai/a31cf423" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm" onClick={closeMenu}>{t.nav.cta} <Icon.arrow /></a>
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
 
       <section className="hero" data-screen-label="Hero">
@@ -77,7 +111,6 @@ const AppInner = () => {
             <div className="hero-cta">
               <a href="https://app.qlar.ai/a31cf423" target="_blank" rel="noopener noreferrer" className="btn btn-brand">{t.hero.ctaPrimary} <Icon.arrow /></a>
               <a href="https://wa.me/6280989999" target="_blank" rel="noopener noreferrer" className="btn btn-wa"><Icon.whatsapp /> {t.hero.ctaChat}</a>
-              <a href="#pricing" className="btn btn-ghost">{t.hero.ctaSecondary}</a>
             </div>
             <div className="hero-meta">
               <span><span className="pip" />{t.hero.metaLive}</span>
