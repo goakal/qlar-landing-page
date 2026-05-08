@@ -111,10 +111,15 @@ const DemoWidget = () => {
           ))}
         </div>
 
-        <a href="https://app.qlar.ai/a31cf423" target="_blank" rel="noopener noreferrer" className="btn btn-primary demo-cta">
-          {t.demo.tryFree}
-          <Icon.arrow />
-        </a>
+        <div className="demo-cta-row">
+          <a href="https://app.qlar.ai/a31cf423" target="_blank" rel="noopener noreferrer" className="btn btn-primary demo-cta">
+            {t.demo.tryFree}
+            <Icon.arrow />
+          </a>
+          <a href="https://wa.me/6280989999" target="_blank" rel="noopener noreferrer" className="btn btn-wa demo-cta">
+            <Icon.whatsapp /> {t.demo.chatWithUs}
+          </a>
+        </div>
 
         <p style={{ fontSize: 12, color: "var(--ink-400)", marginTop: 28, lineHeight: 1.5 }}>
           {t.demo.footnote}

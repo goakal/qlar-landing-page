@@ -53,9 +53,12 @@ const AppInner = () => {
             <a href="#pricing">{t.nav.pricing}</a>
             <a href="#faq">{t.nav.faq}</a>
           </div>
-          <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+          <div className="nav-actions" style={{ display: "flex", gap: 10, alignItems: "center" }}>
             <LangToggle />
-            <a href="#" className="btn btn-ghost btn-sm">{t.nav.signin}</a>
+            <a href="#" className="btn btn-ghost btn-sm nav-signin">{t.nav.signin}</a>
+            <a href="https://wa.me/6280989999" target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-sm nav-chat" aria-label={t.nav.chat}>
+              <Icon.whatsapp /> <span className="nav-chat-label">{t.nav.chat}</span>
+            </a>
             <a href="https://app.qlar.ai/a31cf423" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">{t.nav.cta} <Icon.arrow /></a>
           </div>
         </div>
@@ -73,6 +76,7 @@ const AppInner = () => {
             <p className="lede" style={{ marginTop: 24, maxWidth: 540 }}>{hook.sub}</p>
             <div className="hero-cta">
               <a href="https://app.qlar.ai/a31cf423" target="_blank" rel="noopener noreferrer" className="btn btn-brand">{t.hero.ctaPrimary} <Icon.arrow /></a>
+              <a href="https://wa.me/6280989999" target="_blank" rel="noopener noreferrer" className="btn btn-wa"><Icon.whatsapp /> {t.hero.ctaChat}</a>
               <a href="#pricing" className="btn btn-ghost">{t.hero.ctaSecondary}</a>
             </div>
             <div className="hero-meta">

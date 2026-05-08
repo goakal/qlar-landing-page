@@ -79,7 +79,7 @@ const Pricing = () => {
         </div>
 
         {/* Calculator */}
-        <div className="card" style={{ padding: 36, marginBottom: 32, background: "white", borderRadius: "var(--radius-xl)" }}>
+        <div className="card pricing-calc-card" style={{ padding: 36, marginBottom: 32, background: "white", borderRadius: "var(--radius-xl)" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 40, alignItems: "center" }} className="pricing-calc-grid">
             <div>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 12 }}>
@@ -128,7 +128,7 @@ const Pricing = () => {
         </div>
 
         {/* Volume table */}
-        <div className="card" style={{ padding: 0, background: "white", borderRadius: "var(--radius-xl)", overflow: "hidden" }}>
+        <div className="card pricing-table-card" style={{ padding: 0, background: "white", borderRadius: "var(--radius-xl)", overflow: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: "var(--font-body)" }}>
             <thead>
               <tr style={{ background: "var(--ink-50)", borderBottom: "1px solid var(--ink-100)" }}>
@@ -159,13 +159,23 @@ const Pricing = () => {
         <p style={{ fontSize: 12, color: "var(--ink-400)", marginTop: 16, textAlign: "center", fontFamily: "var(--font-mono)" }}>{t.pricing.tableNote}</p>
 
         <div style={{ textAlign: "center", marginTop: 32 }}>
-          <a href="#cta" className="btn btn-primary">{t.pricing.ctaTalk} <Icon.arrow /></a>
+          <a href="https://wa.me/6280989999" target="_blank" rel="noopener noreferrer" className="btn btn-wa"><Icon.whatsapp /> {t.pricing.ctaTalk}</a>
         </div>
       </div>
 
       <style>{`
+        .pricing-calc-grid > div { min-width: 0; }
         @media (max-width: 880px) {
           .pricing-calc-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+        }
+        @media (max-width: 640px) {
+          .pricing-calc-card { padding: 24px !important; }
+          .pricing-calc-grid > div:first-child > div:first-child > span:last-child { font-size: 26px !important; }
+          .pricing-calc-grid > div:first-child > div:last-child > div:nth-child(2) { flex-wrap: wrap; }
+          .pricing-calc-grid > div:first-child > div:last-child > div:nth-child(2) span { font-size: 24px !important; }
+          .pricing-table-card table th,
+          .pricing-table-card table td { padding: 12px 14px !important; font-size: 13px !important; }
+          .pricing-table-card table th { font-size: 10.5px !important; }
         }
       `}</style>
     </section>
@@ -186,15 +196,6 @@ const SocialProof = () => {
             </div>
           ))}
         </div>
-        <div className="logo-strip" aria-label="Pilot providers">
-          {["Klinik Aurora", "Senopati Aesthetic", "Pondok Dental", "Kemang Pediatric", "GreenLeaf Clinic"].map((n) => (
-            <div key={n} className="logo-mark">
-              <svg className="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v20M2 12h20" strokeLinecap="round" /></svg>
-              {n}
-            </div>
-          ))}
-        </div>
-        <p style={{ textAlign: "center", marginTop: 16, fontSize: 12, color: "var(--ink-400)", fontFamily: "var(--font-mono)" }}>{t.proof.logosNote}</p>
       </div>
     </section>
   );
@@ -238,8 +239,8 @@ const FinalCTA = () => {
             <a href="https://app.qlar.ai/a31cf423" target="_blank" rel="noopener noreferrer" className="btn btn-brand" style={{ background: "white", color: "var(--qlar-700)" }}>
               {t.cta.primary} <Icon.arrow />
             </a>
-            <a href="#" className="btn btn-ghost" style={{ background: "transparent", borderColor: "rgba(255,255,255,0.25)", color: "white" }}>
-              {t.cta.secondary}
+            <a href="https://wa.me/6280989999" target="_blank" rel="noopener noreferrer" className="btn btn-wa">
+              <Icon.whatsapp /> {t.cta.secondary}
             </a>
           </div>
         </div>

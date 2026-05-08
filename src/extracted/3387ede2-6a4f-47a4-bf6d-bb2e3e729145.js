@@ -2,7 +2,7 @@
 const I18N = {
   en: {
     // Nav
-    nav: { outcomes: "Outcomes", how: "How it works", demo: "Live demo", pricing: "Pricing", faq: "FAQ", signin: "Sign in", cta: "Try the live agent" },
+    nav: { outcomes: "Outcomes", how: "How it works", demo: "Live demo", pricing: "Pricing", faq: "FAQ", signin: "Sign in", cta: "Try the live agent", chat: "Chat with us" },
     // Hero
     badge: "AI Agent for Healthcare Providers",
     hero: {
@@ -11,6 +11,7 @@ const I18N = {
       sub: "AI agents that respond instantly 24/7, recommend the right services, and follow up automatically — so every patient inquiry turns into a booked, retained, and growing relationship.",
       ctaPrimary: "Try the live agent now",
       ctaSecondary: "See pricing",
+      ctaChat: "Chat with us",
       metaLive: "Live with pilot providers in Jakarta",
       metaWa: "Native WhatsApp Business API",
       pillars: [
@@ -73,6 +74,7 @@ const I18N = {
       placeholder: "Type a message…",
       responseTime: "response time",
       tryFree: "Try our agent for free",
+      chatWithUs: "Chat with us",
       behindEyebrow: "§ Agent reasoning",
       behindTitle: "What runs behind the chat",
       behindSub: "Each reply classifies intent, calls your provider's API, and composes the response — not a scripted chatbot.",
@@ -129,12 +131,12 @@ const I18N = {
       h2b: "never sleeps again.",
       sub: "Try the live agent on a real provider scenario — no signup, no calendar dance. If it doesn't blow you away, the call is short.",
       primary: "Try the live agent now",
-      secondary: "Book 20-min walkthrough",
+      secondary: "Chat with us",
     },
     footer: { rights: "© 2026 Qlar. Built in Jakarta for healthcare providers.", links: ["Privacy", "Terms", "Data residency", "Status", "Contact"] },
   },
   id: {
-    nav: { outcomes: "Manfaat", how: "Cara kerja", demo: "Demo langsung", pricing: "Harga", faq: "FAQ", signin: "Masuk", cta: "Coba agen sekarang" },
+    nav: { outcomes: "Manfaat", how: "Cara kerja", demo: "Demo langsung", pricing: "Harga", faq: "FAQ", signin: "Masuk", cta: "Coba agen sekarang", chat: "Chat dengan kami" },
     badge: "AI Agent untuk Penyedia Layanan Kesehatan",
     hero: {
       h1a: "",
@@ -142,6 +144,7 @@ const I18N = {
       sub: "Agen AI yang membalas instan 24/7, merekomendasikan layanan tepat, dan follow-up otomatis — supaya setiap pertanyaan pasien jadi booking, kunjungan kembali, dan hubungan yang tumbuh.",
       ctaPrimary: "Coba agen langsung sekarang",
       ctaSecondary: "Lihat harga",
+      ctaChat: "Chat dengan kami",
       metaLive: "Aktif dengan mitra pilot di Jakarta",
       metaWa: "WhatsApp Business API resmi",
       pillars: [
@@ -201,6 +204,7 @@ const I18N = {
       placeholder: "Ketik pesan…",
       responseTime: "waktu respons",
       tryFree: "Coba agen kami gratis",
+      chatWithUs: "Chat dengan kami",
       behindEyebrow: "§ Logika agen",
       behindTitle: "Yang berjalan di balik chat",
       behindSub: "Setiap balasan mengklasifikasi intent, memanggil API fasilitas Anda, dan menyusun respons — bukan bot skrip.",
@@ -253,7 +257,7 @@ const I18N = {
       h2b: "tidak akan tidur lagi.",
       sub: "Coba agen langsung dengan skenario fasilitas nyata — tanpa daftar, tanpa atur kalender. Kalau tidak terkesan, panggilannya singkat.",
       primary: "Coba agen sekarang",
-      secondary: "Atur demo 20 menit",
+      secondary: "Chat dengan kami",
     },
     footer: { rights: "© 2026 Qlar. Dibuat di Jakarta untuk penyedia layanan kesehatan.", links: ["Privasi", "Ketentuan", "Lokasi data", "Status", "Kontak"] },
   },
