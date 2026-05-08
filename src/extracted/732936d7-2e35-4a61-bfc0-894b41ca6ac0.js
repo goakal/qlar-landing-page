@@ -186,6 +186,7 @@ const DemoWidget = () => {
                     )}
                   </div>
                   <div className="action-body">
+                    {a.thought && <div className="action-thought">{a.thought}</div>}
                     <div className="action-api">
                       <span className={"action-method m-" + (a.method || "GET").toLowerCase()}>{a.method}</span>
                       <code>{a.api}</code>

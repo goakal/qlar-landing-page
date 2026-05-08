@@ -271,8 +271,8 @@ const DEMO_SCRIPTS_I18N = {
         { role: "ai", typing: 600, text: "Booking confirmation ✨\n\n• Facial Treatment\n• Tue, May 5 · 10:30\n• Qlar Kemang\n• Therapist: Rina\n\nReply *YES* to confirm.", delay: 1000 },
       ],
       actions: [
-        { trigger: 1, method: "GET", api: "/api/availability", intent: "Intent · BOOKING_REQUEST", desc: "Looking up facial slots tomorrow morning across all branches" },
-        { trigger: 3, method: "POST", api: "/api/bookings", intent: "Intent · SLOT_SELECTION", desc: "Creating: Facial · Kemang 10:30 · Therapist Rina · Tue May 5" },
+        { trigger: 1, method: "GET", api: "/api/availability", intent: "Intent · BOOKING_REQUEST", thought: "Patient wants to book a facial for tomorrow morning — checking real-time slot availability across all branches to find options.", desc: "Looking up facial slots tomorrow morning across all branches" },
+        { trigger: 3, method: "POST", api: "/api/bookings", intent: "Intent · SLOT_SELECTION", thought: "Patient selected Kemang 10:30 — creating the booking record and assigning therapist Rina.", desc: "Creating: Facial · Kemang 10:30 · Therapist Rina · Tue May 5" },
       ],
     },
     pricing: {
@@ -282,7 +282,7 @@ const DEMO_SCRIPTS_I18N = {
         { role: "ai", typing: 700, text: "A botox consultation with Dr. Sari is **free** — includes a 15-minute skin assessment.\n\nTreatments start from:\n• Forehead botox — Rp 2.5jt\n• Crow's feet — Rp 1.8jt\n• Full package — Rp 5.5jt\n\nWant me to book a consultation?", delay: 1400 },
       ],
       actions: [
-        { trigger: 1, method: "GET", api: "/api/pricing", intent: "Intent · PRICING_QUERY", desc: "Pulling botox menu, consultation policy, and treatment ranges" },
+        { trigger: 1, method: "GET", api: "/api/pricing", intent: "Intent · PRICING_QUERY", thought: "Patient is asking about botox costs — fetching the full treatment menu and consultation policy to give an accurate, personalized answer.", desc: "Pulling botox menu, consultation policy, and treatment ranges" },
       ],
     },
     emergency: {
@@ -294,8 +294,8 @@ const DEMO_SCRIPTS_I18N = {
         { role: "ai", typing: 600, text: "Booked ✓ Details sent. Get well soon — wishing your little one a fast recovery 💜", delay: 900 },
       ],
       actions: [
-        { trigger: 1, method: "GET", api: "/api/availability", intent: "Intent · URGENT_BOOKING", desc: "Pediatrician slots tomorrow 08:00 + ER triage criteria for high pediatric fever" },
-        { trigger: 3, method: "POST", api: "/api/bookings", intent: "Intent · BOOKING_CONFIRM", desc: "Creating: Dr. Sari Wijaya · Pediatrician · 08:00 · Qlar Kemang" },
+        { trigger: 1, method: "GET", api: "/api/availability", intent: "Intent · URGENT_BOOKING", thought: "Urgency detected: child has high fever and parent needs the earliest available pediatrician. Also loading ER triage thresholds in case fever is severe tonight.", desc: "Pediatrician slots tomorrow 08:00 + ER triage criteria for high pediatric fever" },
+        { trigger: 3, method: "POST", api: "/api/bookings", intent: "Intent · BOOKING_CONFIRM", thought: "Parent confirmed 'Yes please book' — creating the urgent appointment with Dr. Sari Wijaya at the 8 AM slot.", desc: "Creating: Dr. Sari Wijaya · Pediatrician · 08:00 · Qlar Kemang" },
       ],
     },
   },
@@ -309,8 +309,8 @@ const DEMO_SCRIPTS_I18N = {
         { role: "ai", typing: 600, text: "Konfirmasi booking ✨\n\n• Facial Treatment\n• Selasa, 5 Mei · 10:30\n• Klinik Qlar Kemang\n• Therapist: Mbak Rina\n\nKirim *YA* untuk konfirmasi.", delay: 1000 },
       ],
       actions: [
-        { trigger: 1, method: "GET", api: "/api/availability", intent: "Intent · BOOKING_REQUEST", desc: "Mencari slot facial besok pagi di semua cabang" },
-        { trigger: 3, method: "POST", api: "/api/bookings", intent: "Intent · SLOT_SELECTION", desc: "Membuat: Facial · Kemang 10:30 · Therapist Mbak Rina · Sel 5 Mei" },
+        { trigger: 1, method: "GET", api: "/api/availability", intent: "Intent · BOOKING_REQUEST", thought: "Pasien ingin booking facial besok pagi — mengecek ketersediaan slot real-time di semua cabang untuk menemukan pilihan terbaik.", desc: "Mencari slot facial besok pagi di semua cabang" },
+        { trigger: 3, method: "POST", api: "/api/bookings", intent: "Intent · SLOT_SELECTION", thought: "Pasien memilih Kemang jam 10:30 — membuat record booking dan menugaskan Mbak Rina sebagai therapist.", desc: "Membuat: Facial · Kemang 10:30 · Therapist Mbak Rina · Sel 5 Mei" },
       ],
     },
     pricing: {
@@ -320,7 +320,7 @@ const DEMO_SCRIPTS_I18N = {
         { role: "ai", typing: 700, text: "Konsultasi botox dengan dr. Sari **gratis** — termasuk skin assessment 15 menit.\n\nTreatment dimulai dari:\n• Botox forehead — Rp 2.5jt\n• Botox crow's feet — Rp 1.8jt\n• Paket lengkap — Rp 5.5jt\n\nMau saya bookingkan konsultasi?", delay: 1400 },
       ],
       actions: [
-        { trigger: 1, method: "GET", api: "/api/pricing", intent: "Intent · PRICING_QUERY", desc: "Mengambil daftar treatment botox dan kebijakan konsultasi" },
+        { trigger: 1, method: "GET", api: "/api/pricing", intent: "Intent · PRICING_QUERY", thought: "Pasien bertanya soal biaya botox — mengambil menu lengkap treatment dan kebijakan konsultasi untuk memberikan jawaban yang akurat.", desc: "Mengambil daftar treatment botox dan kebijakan konsultasi" },
       ],
     },
     emergency: {
@@ -332,8 +332,8 @@ const DEMO_SCRIPTS_I18N = {
         { role: "ai", typing: 600, text: "Booked ✓ Detail dikirim. Get well soon, semoga si kecil cepat pulih 💜", delay: 900 },
       ],
       actions: [
-        { trigger: 1, method: "GET", api: "/api/availability", intent: "Intent · URGENT_BOOKING", desc: "Slot dokter anak besok 08:00 + kriteria triase IGD untuk demam tinggi anak" },
-        { trigger: 3, method: "POST", api: "/api/bookings", intent: "Intent · BOOKING_CONFIRM", desc: "Membuat: dr. Sari Wijaya · Dokter Anak · 08:00 · Klinik Qlar Kemang" },
+        { trigger: 1, method: "GET", api: "/api/availability", intent: "Intent · URGENT_BOOKING", thought: "Terdeteksi urgensi: anak demam tinggi dan orang tua butuh dokter anak sesegera mungkin. Juga memuat panduan triase IGD untuk antisipasi gejala berat malam ini.", desc: "Slot dokter anak besok 08:00 + kriteria triase IGD untuk demam tinggi anak" },
+        { trigger: 3, method: "POST", api: "/api/bookings", intent: "Intent · BOOKING_CONFIRM", thought: "Orang tua konfirmasi 'Iya tolong book' — membuat janji mendesak dengan dr. Sari Wijaya di slot jam 8 pagi.", desc: "Membuat: dr. Sari Wijaya · Dokter Anak · 08:00 · Klinik Qlar Kemang" },
       ],
     },
   },

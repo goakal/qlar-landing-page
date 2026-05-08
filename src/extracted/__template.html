@@ -1040,6 +1040,21 @@ section { position: relative; }
   background: transparent;
   padding: 0;
 }
+.action-thought {
+  font-size: 12.5px;
+  color: var(--qlar-700, #5b3fdb);
+  background: var(--qlar-50, #f5f3ff);
+  border-left: 3px solid var(--qlar-300, #a78bfa);
+  border-radius: 0 6px 6px 0;
+  padding: 7px 10px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  font-style: italic;
+}
+.action-thought::before {
+  content: "💭 ";
+  font-style: normal;
+}
 .action-intent {
   font-family: var(--font-mono);
   font-size: 10.5px;
