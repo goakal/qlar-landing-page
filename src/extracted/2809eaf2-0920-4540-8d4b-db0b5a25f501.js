@@ -235,7 +235,7 @@ const FinalCTA = () => {
           <h2 style={{ marginTop: 12 }}>{t.cta.h2a}<br />{t.cta.h2b}</h2>
           <p>{t.cta.sub}</p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="#demo" className="btn btn-brand" style={{ background: "white", color: "var(--qlar-700)" }}>
+            <a href="https://app.qlar.ai/a31cf423" target="_blank" rel="noopener noreferrer" className="btn btn-brand" style={{ background: "white", color: "var(--qlar-700)" }}>
               {t.cta.primary} <Icon.arrow />
             </a>
             <a href="#" className="btn btn-ghost" style={{ background: "transparent", borderColor: "rgba(255,255,255,0.25)", color: "white" }}>

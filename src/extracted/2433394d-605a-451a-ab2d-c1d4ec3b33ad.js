@@ -56,7 +56,7 @@ const AppInner = () => {
           <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
             <LangToggle />
             <a href="#" className="btn btn-ghost btn-sm">{t.nav.signin}</a>
-            <a href="#cta" className="btn btn-primary btn-sm">{t.nav.cta} <Icon.arrow /></a>
+            <a href="https://app.qlar.ai/a31cf423" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">{t.nav.cta} <Icon.arrow /></a>
           </div>
         </div>
       </nav>
@@ -72,7 +72,7 @@ const AppInner = () => {
             <h1 className="h-display">{hook.h1}</h1>
             <p className="lede" style={{ marginTop: 24, maxWidth: 540 }}>{hook.sub}</p>
             <div className="hero-cta">
-              <a href="#demo" className="btn btn-brand">{t.hero.ctaPrimary} <Icon.arrow /></a>
+              <a href="https://app.qlar.ai/a31cf423" target="_blank" rel="noopener noreferrer" className="btn btn-brand">{t.hero.ctaPrimary} <Icon.arrow /></a>
               <a href="#pricing" className="btn btn-ghost">{t.hero.ctaSecondary}</a>
             </div>
             <div className="hero-meta">

@@ -111,7 +111,7 @@ const DemoWidget = () => {
           ))}
         </div>
 
-        <a href="#cta" className="btn btn-primary demo-cta">
+        <a href="https://app.qlar.ai/a31cf423" target="_blank" rel="noopener noreferrer" className="btn btn-primary demo-cta">
           {t.demo.tryFree}
           <Icon.arrow />
         </a>
