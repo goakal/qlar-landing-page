@@ -51,6 +51,32 @@ const HowItWorks = () => {
   );
 };
 
+const TryLive = () => {
+  const { t } = useLang();
+  return (
+    <section id="try-live" className="section try-live">
+      <div className="container">
+        <div className="section-head">
+          <span className="eyebrow">{t.tryLive.eyebrow}</span>
+          <h2 className="h-section" style={{ marginTop: 8 }}>
+            {t.tryLive.h2a}<br />
+            <span className="gradient-text">{t.tryLive.h2b}</span>
+          </h2>
+          <p className="lede" style={{ marginTop: 20 }}>{t.tryLive.sub}</p>
+        </div>
+        <div className="try-live-card">
+          <pusaka-container
+            data-agent-id="a31cf423-a159-46c7-8ead-5cba68a78db6"
+            data-theme="light"
+            data-app-mode="chat"
+            data-enable-autofocus="false"
+          ></pusaka-container>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // Pricing — interactive per-conversation calculator
 const Pricing = () => {
   const { t, lang } = useLang();
@@ -303,4 +329,4 @@ const LangToggle = () => {
   );
 };
 
-Object.assign(window, { Outcomes, HowItWorks, Pricing, SocialProof, FAQ, FinalCTA, Footer, LangToggle });
+Object.assign(window, { Outcomes, HowItWorks, TryLive, Pricing, SocialProof, FAQ, FinalCTA, Footer, LangToggle });

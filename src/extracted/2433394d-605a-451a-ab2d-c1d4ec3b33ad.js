@@ -123,6 +123,7 @@ const AppInner = () => {
         </div>
       </section>
 
+      <TryLive />
       <Outcomes />
       <HowItWorks />
       <section id="demo" className="section" data-screen-label="Demo">

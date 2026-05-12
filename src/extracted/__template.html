@@ -6,6 +6,7 @@
   <meta name="description" content="Your clinic's WhatsApp never sleeps. An AI agent that answers patient inquiries 24/7, books appointments, and hands sensitive cases to your staff.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <script type="module" crossorigin src="https://app-container-prod.pusaka.ai/pusaka-container.mjs"></script>
   <style>/* cyrillic-ext */
 @font-face {
   font-family: 'Inter';
@@ -1979,6 +1980,43 @@ section { position: relative; }
 }
 .scene-controls button:hover { background: var(--ink-100); }
 .scene-controls button.active { background: var(--qlar-500); color: white; }
+
+/* ============ Try-live agent embed ============ */
+.try-live {
+  background: var(--ink-50);
+}
+.try-live-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.try-live-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--qlar-500), var(--qlar-300));
+}
+.try-live-card pusaka-container {
+  display: block;
+  width: 100%;
+  min-height: 600px;
+  border-radius: calc(var(--radius-xl) - 12px);
+  overflow: hidden;
+}
+@media (max-width: 880px) {
+  .try-live-card pusaka-container { min-height: 520px; }
+}
+@media (max-width: 560px) {
+  .try-live-card { padding: 8px; }
+  .try-live-card pusaka-container { min-height: 480px; }
+}
 
 /* ============ Tweaks accent overrides ============ */
 [data-accent="green"] {

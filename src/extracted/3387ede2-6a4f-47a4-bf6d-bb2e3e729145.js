@@ -124,6 +124,13 @@ const I18N = {
         { q: "What's the contract length?", a: "Monthly. Cancel anytime with 30 days notice. We don't lock you in — if the unit economics don't work for you, the product isn't worth selling." },
       ],
     },
+    // Try-live agent
+    tryLive: {
+      eyebrow: "§ Talk to the agent",
+      h2a: "Skip the pitch.",
+      h2b: "Talk to the real Qlar.",
+      sub: "This is the same agent live with our pilot providers. Ask about booking, pricing, after-hours — anything a patient would.",
+    },
     // Final CTA
     cta: {
       eyebrow: "§ Ship in 48 hours",
@@ -250,6 +257,12 @@ const I18N = {
         { q: "Apakah pasien tahu mereka bicara dengan AI?", a: "Kami transparan secara default — profil WhatsApp tertulis 'Penyedia X — Asisten Digital' dan bot identifikasi diri jika ditanya. Tidak disarankan pura-pura jadi manusia." },
         { q: "Berapa lama kontraknya?", a: "Bulanan. Bisa dibatalkan kapan saja dengan notice 30 hari. Tidak ada lock-in — jika unit economics tidak cocok, produknya tidak layak dijual." },
       ],
+    },
+    tryLive: {
+      eyebrow: "§ Bicara dengan agen",
+      h2a: "Lewati pitch.",
+      h2b: "Bicara langsung dengan Qlar.",
+      sub: "Ini agen yang sama yang aktif di mitra pilot kami. Tanya soal booking, harga, jam malam — apa pun yang akan pasien tanyakan.",
     },
     cta: {
       eyebrow: "§ Aktif dalam 48 jam",
