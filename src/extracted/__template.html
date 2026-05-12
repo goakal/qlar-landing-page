@@ -1995,6 +1995,8 @@ section { position: relative; }
   padding: 12px;
   position: relative;
   overflow: hidden;
+  /* Explicit height so the inline pusaka-container can fill it with height: 100% */
+  height: 624px;
 }
 .try-live-card::before {
   content: "";
@@ -2002,20 +2004,20 @@ section { position: relative; }
   inset: 0 0 auto 0;
   height: 3px;
   background: linear-gradient(90deg, var(--qlar-500), var(--qlar-300));
+  z-index: 1;
 }
 .try-live-card pusaka-container {
   display: block;
   width: 100%;
-  min-height: 600px;
+  height: 100%;
   border-radius: calc(var(--radius-xl) - 12px);
   overflow: hidden;
 }
 @media (max-width: 880px) {
-  .try-live-card pusaka-container { min-height: 520px; }
+  .try-live-card { height: 564px; }
 }
 @media (max-width: 560px) {
-  .try-live-card { padding: 8px; }
-  .try-live-card pusaka-container { min-height: 480px; }
+  .try-live-card { padding: 8px; height: 516px; }
 }
 
 /* ============ Tweaks accent overrides ============ */
